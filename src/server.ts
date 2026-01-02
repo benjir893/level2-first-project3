@@ -2,8 +2,6 @@ import app from './app.js';
 import mongoose from 'mongoose';
 import config from './app/config/index.js';
 
-main().catch((err) => console.log(err));
-
 async function main() {
   try {
     await mongoose.connect(config.databaseUrl as string);
@@ -16,4 +14,4 @@ async function main() {
     console.log('Failed to connect to MongoDB', error);
   }
 }
-main().catch((err) => console.log(err));
+main();
