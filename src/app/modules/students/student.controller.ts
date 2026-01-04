@@ -11,7 +11,11 @@ const createStudent = async (req: Request, res: Response) => {
       data: result,
     });
   } catch (error) {
-    res.status(500).json({ message: 'Internal server error', error });
+    res.status(500).json({
+      success: false,
+      message: 'Some thing wrong with the input data',
+      error: error,
+    });
   }
 };
 
